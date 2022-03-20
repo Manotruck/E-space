@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="script.js"></script>
+    <title>votreespace</title>
+    <style>
+        .container {
+            display:grid;
+            grid-template-columns: 1500px;
+            grid-template-rows: 100px 50px 600px;
+           
+        }
+        .header {
+            display: block;
+            background-color: blanchedalmond;
+            grid-row-start: 1;
+            grid-row-end: 2;
+            text-align: center;
+            justify-items: center;
+        }
+        .nav {
+            display: block;
+            background-color: aquamarine;
+            grid-row-start: 2;
+            
+            
+        }
+        .nav li {
+            display: inline-flex;
+            margin-left: 50px;
+           
+           
+            border: 5px solid
+        }
+        .main {
+            display: block;
+            background-color: blueviolet;
+            grid-row-start: 3;
+        }
+        .photodeprofil  {
+            display: block;
+            height: 80px;
+            width: 80px;
+            margin-left: 710px;
+            border: 2px solid red;
+            
+        }
+        form {
+            display: none;
+        }
+
+        .photodeprofil img {
+            display: none;
+            height: 80px;
+            width: 80px;
+            border: 1px solid red;
+            margin-left: 710px;
+        }
+        .photodeprofil:hover form {
+            display: contents;
+        
+  
+        } 
+    </style>
+</head>
+<body>
+  <div class="container">
+      <div class="header">
+       Votre pseudo
+       <div class="photodeprofil">
+        
+        <form action="photodeprofil.jpg" method="get">
+            <input type="file">
+            <input type="submit" value="Valider">
+        </form>
+        <img src="photodeprofil.jpg" id="photodp">
+       </div>
+       
+      </div>
+      <div class="nav">
+        <ul>
+            <li>
+                Présentation
+            </li>
+            <li>
+                Photos
+            </li>
+            <li>
+                Vidéos
+            </li>
+            
+            <li>
+                Artistes
+            </li>
+            <li>
+                Actus
+            </li>
+            <li>
+                Amis
+            </li>
+            <li>
+                Groupes
+            </li>
+        </ul>
+      
+      </div>
+      <div class="main">
+
+      </div>
+    </div>
+</body>

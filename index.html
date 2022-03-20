@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="script.js"></script>
+    
+    <title>E-space</title>
+    <style>
+        .container {
+            
+            display: grid;
+            grid-template-columns: 200px 1100px 200px;
+            grid-template-rows: 60px ;
+            grid-template-areas: 
+                   "header header header"
+                   "sidebar-1  content sidebar-2";
+                   
+            column-rule: 2px solid rgb(0, 255, 0);
+            border-radius: 5px;
+
+        }
+
+        .header {
+            
+            display: block;
+            width: 100%;
+            grid-column-start: 1;
+            grid-column-end: 4;
+            grid-row-start: 1;
+            grid-row-end: 2;
+            min-height: 60px;
+            
+            border: 2px solid rgb(27, 202, 27);
+            border-radius: 5px;
+            column-rule: 2px solid rgb(0, 255, 0);
+             
+}
+    
+        .logo { 
+             position: absolute; 
+             display: block;
+            
+             min-width: 95px;
+             min-height: 60px;
+             max-height: 60px;
+             grid-column-start: 1;
+             grid-column-end: 2;
+             grid-row-start: 1;
+             grid-row-end: 2;
+             font-size: 23px;
+             color:red;
+             text-align: center;
+             line-height: 50px;
+             border: 2px solid rgb(27, 202, 27);
+             border-radius: 5px;
+             column-rule: 2px solid rgb(11, 12, 11);
+             background-color: rgb(233, 245, 236);
+           
+        }
+        .actu {
+            display: block;
+            grid-column-start: 2;
+            grid-column-end: 4;
+            grid-row-start: 1;
+            grid-row-end: 2;
+          
+            margin-left: 65px;
+            max-height: 60px;
+            
+            
+            border: 2px solid rgb(27, 202, 27);
+            color: rgb(27, 202, 27);
+            font-size: 25px;
+            border-radius: 5px;
+           
+            background-color: rgb(56, 83, 102);
+
+        }
+        
+        
+        #post {
+          
+            position: block;
+            display: grid;
+            grid-area: sidebar-1;
+            margin-top: 8px;
+            border: 2px solid rgb(27, 202, 27);
+            padding: auto;
+            text-align: center;
+            font-size: 23px;
+            color:rgb(27, 202, 27);
+            border-radius: 5px;
+            background-color: rgb(56, 83, 102);
+            
+            
+        }
+        #main {
+            display: block;
+            grid-area: content;
+            
+            margin-top: 8px;
+            
+            border: 5px solid rgb(27, 202, 27);
+            border-radius: 5px;
+            color: rgb(202, 91, 27);
+            text-decoration: underline red;
+            font-size: 23px;
+            text-align: center;
+            background-color: rgb(158, 157, 157);
+        }
+        #aside {
+            
+            display: block;
+            grid-area: sidebar-2;
+            margin-top: 8px;
+            padding: 5px;
+            border: 2px solid rgb(27, 202, 27);
+            border-radius: 5px;
+            background-color: rgb(56, 83, 102);
+            text-align: center;
+        }
+        
+        .actu li {
+            display: inline-block;
+            max-height: 30px;
+            border: 2px solid red;
+            padding: 6px;
+            margin-bottom: 40px;
+            
+            line-height: 6px;
+            font-size: 15px;
+            border-radius: 5px;
+            background-color: rgb(238, 247, 238);
+        }
+        .post li {
+            display: inline-block;
+            border: 2px solid red;
+            padding: 6px;
+            text-align: center;
+            line-height: 6px;
+            margin: 10px;
+            margin-left: -30px;
+            font-size: 17px;
+            border-radius: 5px;
+            background-color: rgb(238, 247, 238);
+        }
+        a:hover {
+            background-color: aqua;
+        }
+        .formulaire {
+            max-height: 25px;
+            max-width: 95px;
+            text-align: center;
+            font-size: 17px;
+            border: 2px solid red;
+            border-radius: 5px;
+            background-color: aliceblue;
+        }
+        #tpost {
+            text-decoration: underline red;
+            max-height: 0px;
+            text-align: left;
+            margin-left: 20px;
+            margin-bottom: -1;
+        }
+        .ipub a{
+            
+            display: inline-block;
+            border: 2px solid red;
+            background-color: aliceblue;
+            
+            margin: 5px;
+        }
+      
+        .choixpub {
+            margin-left: -30px;
+        }
+        .choixpub li {
+            display:  inline-block;
+            border: 2px solid red;
+            background-color: cadetblue;
+        }
+        .vibilites {
+            margin: 0 40px 0 0px;
+        }
+        .preferences{
+            margin: 0 0 0 40px;
+        }
+        #preferences {
+            display: none;
+            box-shadow: 2px 2px 2px #ccc;
+            position: absolute;
+            min-width: 100px;
+            max-width: 100px;
+            
+            background-color: rgb(56, 83, 102);
+            text-align: left;
+            
+            font-size: 11px;
+            z-index: 1000;
+            
+            
+        }
+        #visibilites {
+            display: none;
+            box-shadow: 2px 2px 2px #ccc;
+            background-color: rgb(56, 83, 102);
+            text-align: left;
+            
+            font-size: 11px;
+            z-index: 1000;
+            
+            
+        }
+        .choixpub > li:hover #visibilites {
+            display: block;
+        }
+        .choixpub > li:hover #preferences {
+            display: block;
+        }
+        select {
+            max-height: 22px;
+        }
+        .espace {
+            text-align: center;
+            max-width: 100px;
+            margin-inline-start: 28%;
+        }
+        .filactu {
+            display:block;
+            justify-items: center;
+            max-width: 75%;
+            margin-left: 162px;
+            background-color: rgb(143, 92, 92);
+            
+            
+        }  
+        .aside img {
+            width: 100%;
+            max-width: 200px;
+        }    
+        
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+        <div class="logo">
+            E-space
+        </div>
+        <div class="actu"> 
+            <ul>
+                <li>
+                    <a href="votreespace.html">Votre espace</a>
+                </li>
+              <li>
+                  <input type="search" id="recherche"> Rechercher
+              </li>
+              <li>
+                  <form action="choixactu" method="post" name="choixactu">
+                    <label for="actulocal">Locale</label>
+                    <input type="checkbox" id="actulocal">
+                    <label for="actunational">Nationale</label>
+                    <input type="checkbox" id="actunational">
+                    <label for="actuinternational">Internationale</label>
+                    <input type="checkbox" id="actuinternational">
+                    <label for="ami">Amis</label>
+                    <input type="checkbox" id="ami">
+                    
+                    <label for="choixactugroupe">Choisissezun ou plusieurs groupes</label>
+                    <select id="choixgroupeactu" name="choixgroupeactu" multiple>
+                        <option value="default">Choix groupes</option>
+                        <option>Groupe1</option>
+                        <option>Groupe2</option>
+                        <option>Groupe3.</option>
+                        <option>Groupe4</option>
+                        <option>Groupe5</option>
+                    </select>
+                    <input type="submit" value="Valider">
+
+                  </form>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="post" id="post">
+      <div class="formulaire">
+          <a link href="formins.html">Inscription</a>
+      </div>  
+    <div class="espace" id="espace">
+          <li>
+            <a href="amis.html">AMIS</a>
+          </li>
+          <li>
+            <a href="groupes.html">GROUPES</a>
+          </li>
+          
+          
+    </div>
+    <div id="tpost">POST</div>
+            <ul>
+                <li>
+                    <a href="video.html">VIDEOS</a>
+                </li><br>
+                <li>
+                    <a href="liens.html">LIENS</a>
+                </li><br>
+                <li>
+                    <a href="photos.html">PHOTOS</a>
+                </li>
+            </ul>
+
+    </div>
+    <div class="main" id="main">
+            FIL D'ACTU
+            <div class="filactu">
+              
+               
+               
+                <video width="500" height="300" controls>
+                    <source src="C:\Users\picac\Desktop\Photos\2020\20200613_161352.mp4" type=video/mp4>
+                 </video>
+                <video width="500" height="300" controls>
+                    <source src="C:\Users\picac\Desktop\Photos\20202021\20201231_120830.mp4" type=video/mp4>
+                 </video>
+                <video width="500" height="300" controls>
+                    <source src="C:\Users\picac\Desktop\Photos\2020\20200613_160743.mp4" type="video/mp4">
+                <iframe width="500" height="315" src="https://www.youtube.com/embed/T-ktG8CDXZA" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            
+            </div>
+         </div> 
+    <div class="aside" id="aside">    
+            
+            <ul class="choixpub">
+                  
+                 <li class="visibilites">
+                      <a>Visibilités</a>
+                            <form action="visibilites.html" method="post" id="visibilites" name="visibilites">
+                              <input type="checkbox" id="local">
+                              <label for="publocal">Locale</label><br>
+                              <input type="checkbox" id="local">
+                              <label for="pubregional">Régionale</label><br>
+                              <input type="checkbox" id="local">
+                              <label for="pubnational">Nationale</label><br>
+                              <input type="checkbox" id="local">
+                              <label for="pubinternational">internationale</label><br>
+                              <input type="submit" value="valider">
+                            </form>
+                 <li class="preferences">
+                        <a>Préférences</a> 
+                            <form action="preferences.html" method="post" id="preferences" name="preferences">
+                              
+                              <input type="checkbox" id="actuIndépendante">
+                              <label for="pubAI">Actu</label><br>
+                              <input type="checkbox" id="environnement">
+                              <label for="pubioe">Environnement</label><br>
+                              <input type="checkbox" id="sports">
+                              <label for="pubsports">Sport</label><br>
+                              <input type="checkbox" id="loisirs créatifs">
+                              <label for="pubnational">Loisirs créatifs</label><br>
+                              <input type="checkbox" id="bricolage">
+                              <label for="pubbricolage">Bricolage</label><br>
+                              <input type="submit" value="valider">
+                            </form> 
+                  
+                    </li>
+                </ul>
+              
+                
+                    
+                    
+                    
+                
+                
+            <div class="ipub"> 
+                <a href="formulairepub.html">Votre pub ici</a>
+                <br>
+                <a href="pub1.html">PUB1</a>
+                <br>
+                
+            </div>
+            
+            <img src="C:\Users\picac\Downloads\fakir-shop-logo-1455614675.jpg">
+            <img src="C:\Users\picac\Downloads\mediapart.jpg">
+            <img src="C:\Users\picac\Downloads\osons causer.jpg">
+            <img src="C:\Users\picac\Downloads\fil d'actu logo.jpg">
+
+
+
+
+    </div>
+
+  
+</container>
+
+
+</body>
+</html>

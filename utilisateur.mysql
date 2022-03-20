@@ -1,0 +1,15 @@
+CREATE TABLE IF NOT EXISTS 'utilisateur' (
+    'utilisateur_id' int(15) NOT NULL AUTO_INCREMENT,
+    'utilisateur_Nom' varchar(55) CHARACTER SET utf8 DEFAULT NULL,
+    'utilisateur_Prenom' varchar(55) CHARACTER SET utf8 DEFAULT NULL,
+    'utilisateur_email' varchar(55) CJARACTER SET utf8 DEFAULT NULL,
+    'utilisateur_Pays' varchar(55) CHARACTER SET utf8 DEFAULT NULL,
+    'utilisateur_CodePostal' varchar(10) CHARACTER SET utf8 DEFAULT NULL,
+    'utilisateur_pseudo' varchar(55) CHARACTER SET utf8 DEFAULT NULL, 
+    'utilisateur_password' v&rchar(55) CHARACTER SET utf8 DEFAULT NULL,
+PRIMARY KEY ('utilisateur_id),
+KEY 'utilisateur_Pays' ('utilisateur_pays),
+KEY 'utilisateur_CodePostal' ('utilisateur_CodePostal'),
+KEY 'utilisateur_Pseudo' ('utilisateur_Pseudo')
+)
+INSERT INTO 'C:\xampp1\htdocs\utilisateur.sql'

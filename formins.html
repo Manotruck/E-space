@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <title>formins</title>
+    <style>
+        .containerform {
+            display: grid;
+            min-width: 300px;
+            background-color: rgb(238, 241, 240);
+            text-align: center;
+        }
+        h1  {
+            color:blue;
+            text-decoration: underline;   
+        }
+        input {
+            margin: 10px;
+          
+        }
+    </style>
+</head>
+<body>
+  <container class="containerform">
+          <h1>Formulaire d'inscription</h1>
+          <div class="formulaire">
+        <form id="utilisateur" action="utilisateur.php" method="post">
+                <input type="text" name="nom" placeholder="Nom"><br>
+                <input type="text" name="prenom" placeholder="Prénom"><br>
+                <input type="email" name="email" placeholder="Adresse email"><br>
+                <input type="text" name="pays" placeholder="Pays"><br>
+                <input type="text" name="codepostal" placeholder="Code postal"><br> 
+                <input type="text" name="pseudo" placeholder="Pseudo"><br>
+                <input type="mdp" name="mdp" placeholder="Mot de passe"><br>
+                <input type="submit" value="Envoyer">        
+        </form> 
+    </div>  
+  </container>
+  
+    
+</body>

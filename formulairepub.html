@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css" />   
+    <title>E-space</title>
+    <style>
+        .containerform {
+            
+            display: grid;
+            min-width: 300px;
+            background-color: rgb(238, 241, 240);
+            margin-left: 50px;
+            text-align: center;
+        }
+        h1  {
+            color:blue;
+            text-decoration: underline;
+               
+        }
+        input {
+            margin: 10px;
+              
+        }
+    </style>
+</head>
+<body>
+  <container class="containerform">
+          
+          <h1>Formulaire de contact</h1>
+          <div class="formulaire">
+        <form id="formulaire" action="utilisateurs.php" method="post">
+                <input type="text" placeholder="Nom de la société/Evenement"><br>
+                <input type="text" placeholder="Nom"><br>
+                <input type="text" placeholder="Prénom"><br>
+                <input type="email" placeholder="Adresse email"><br>
+                <input type="text" placeholder="Pays"><br>
+                <input type="text" placeholder="Code postal"><br> 
+                <input type="file"><br>
+                <textarea id="infos" placeholder="Commentaires"></textarea><br>
+                <input type="submit" value="Envoyer">        
+        </form> 
+    </div>  
+  </container>
+  <script src="script.js"></script>  
+</body>
